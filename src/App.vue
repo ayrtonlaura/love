@@ -30,7 +30,7 @@ export default {
       this.buttonLeft = newLeft;
     },
     btnCancelar(){
-      alert("Ayrton");
+      alert("Ayrton2");
     }
   },
 };
