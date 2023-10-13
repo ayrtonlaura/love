@@ -1,7 +1,10 @@
 <template>
   <div class="centered-container">
+    <div>
+      <h1>Titulo</h1>
+    </div>
     <div class="row">
-      <button @click="btnCancelar">Cancelar</button>
+      <button @click="btnCancelar" class="btnCancelar">Cancelar</button>
       <button
         class="btnAceptar"
         @mouseover="moveButton"
@@ -33,8 +36,8 @@ export default {
         this.$refs.moveableButton.style.left = this.buttonLeft + 'px';
       } else {
         // Calcula nuevas posiciones de manera aleatoria
-        const newTop = Math.floor(Math.random() * window.innerHeight);
-        const newLeft = Math.floor(Math.random() * window.innerWidth);
+        const newTop = Math.floor(Math.random() * (window.innerHeight - 50)); // Resta el tamaño del botón para que no se desborde en la parte inferior
+        const newLeft = Math.floor(Math.random() * (window.innerWidth - 100)); // Resta el tamaño del botón para que no se desborde en el lado derecho
 
         // Actualiza las posiciones en los datos del componente
         this.buttonTop = newTop;
@@ -65,5 +68,9 @@ button {
   margin: 0 15px; /* Margen de 15px entre los botones */
   padding: 10px 20px;
   /* Agrega otros estilos según sea necesario */
+}
+
+.btnCancelar {
+  top: 257px;
 }
 </style>
