@@ -1,13 +1,6 @@
 <template>
   <div>
-    <button @click="btnCancelar" >Cancelar</button>
-    <button
-      @mouseover="moveButton"
-      @click="moveButton"
-      :style="{ top: buttonTop + 'px', left: buttonLeft + 'px' }"
-    >
-      Mueve el Botón
-    </button>
+    <h1>hola</h1>
   </div>
 </template>
 

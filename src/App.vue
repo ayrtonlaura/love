@@ -1,31 +1,43 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <button @click="btnCancelar" >Cancelar</button>
+    <button
+      @mouseover="moveButton"
+      @click="moveButton"
+      :style="{ top: buttonTop + 'px', left: buttonLeft + 'px' }"
+    >
+      Mueve el Botón
+    </button>
+  </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      buttonTop: 0,
+      buttonLeft: 0,
+    };
+  },
+  methods: {
+    moveButton() {
+      // Calcula nuevas posiciones de manera aleatoria
+      const newTop = Math.floor(Math.random() * window.innerHeight);
+      const newLeft = Math.floor(Math.random() * window.innerWidth);
+
+      // Actualiza las posiciones en los datos del componente
+      this.buttonTop = newTop;
+      this.buttonLeft = newLeft;
+    },
+    btnCancelar(){
+      alert("Ayrton");
+    }
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100vh;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+button {
+  position: absolute;
 }
 </style>
